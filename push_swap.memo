@@ -6,7 +6,7 @@
 #    By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:20:34 by tfujiwar          #+#    #+#              #
-#    Updated: 2022/10/21 13:56:36 by tfujiwar         ###   ########.fr        #
+#    Updated: 2022/10/21 14:27:41 by tfujiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,11 @@ int	psuedo_main(int argc, char *argv[])
 	intlist = argv_to_intlist()			// convert argv to list, if incorrect input or malloc error, return NULL;
 	if (!intlist): return_err			// check if every args is correctly converted to int: else print("Error");
 	if dup_check(intlist): return_err 	// check if dup value in list: print("Error");
-	sorted = sort(intlist)
-		intlist to t_list
-		if (!t_list)
-			free(t_list)
-			return NULL
-		a = t_list
+	a = intlist_to_t_list(intlist)
+	free(intlist)
+	if (!a)
+		return ;
+	sorted = sort(a)
 		a -> b
 		insert b to a
 		return a
