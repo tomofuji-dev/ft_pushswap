@@ -1,0 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    push_swap.memo                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/21 11:20:34 by tfujiwar          #+#    #+#              #
+#    Updated: 2022/10/21 13:56:36 by tfujiwar         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+/*
+int return_err(void **p)
+{
+	while (*p)
+		free(*p);
+		p++;
+	print("Error")
+	return (-1);
+}
+
+int	psuedo_main(int argc, char *argv[])
+{
+	if argc_check(): return			// check if argc >= 2: else print None;
+	intlist = argv_to_intlist()			// convert argv to list, if incorrect input or malloc error, return NULL;
+	if (!intlist): return_err			// check if every args is correctly converted to int: else print("Error");
+	if dup_check(intlist): return_err 	// check if dup value in list: print("Error");
+	sorted = sort(intlist)
+		intlist to t_list
+		if (!t_list)
+			free(t_list)
+			return NULL
+		a = t_list
+		a -> b
+		insert b to a
+		return a
+	if (!sorted): return_err
+}
+*/
