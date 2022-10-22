@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 06:27:12 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 07:30:07 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/23 07:36:27 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ static void	print_stack(t_list *stack)
 		printf("%s", "stack is empty\n");
 		return ;
 	}
+	printf("[");
 	tmp = stack->next;
 	while (tmp->next->sentinel == FALSE)
 	{
 		printf("%d ", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("%d ", tmp->content);
-	printf("\n");
+	printf("%d]\n", tmp->content);
 	return ;
 }
 
@@ -72,14 +72,26 @@ int	main(int argc, char *argv[])
 	print_stack(stack_b);
 	printf("===== swap =====\n");
 	swap_a(stack_a, &len_a);
-	swap_a(stack_b, &len_b);
+	swap_b(stack_b, &len_b);
 	printf("stack a: \n");
 	print_stack(stack_a);
 	printf("stack b: \n");
 	print_stack(stack_b);
 	printf("===== swap =====\n");
 	swap_a(stack_a, &len_a);
-	swap_a(stack_b, &len_b);
+	swap_b(stack_b, &len_b);
+	printf("stack a: \n");
+	print_stack(stack_a);
+	printf("stack b: \n");
+	print_stack(stack_b);
+	printf("===== swap =====\n");
+	swap_ab(stack_a, stack_b, &len_a, &len_b);
+	printf("stack a: \n");
+	print_stack(stack_a);
+	printf("stack b: \n");
+	print_stack(stack_b);
+	printf("===== swap =====\n");
+	swap_ab(stack_a, stack_b, &len_a, &len_b);
 	printf("stack a: \n");
 	print_stack(stack_a);
 	printf("stack b: \n");

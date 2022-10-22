@@ -6,7 +6,7 @@
 #    By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:20:34 by tfujiwar          #+#    #+#              #
-#    Updated: 2022/10/21 14:27:41 by tfujiwar         ###   ########.fr        #
+#    Updated: 2022/10/23 07:39:26 by tfujiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,4 +36,8 @@ int	psuedo_main(int argc, char *argv[])
 		return a
 	if (!sorted): return_err
 }
+
+=== memo ===
+warning: len_a, len_bを減らす際、もし0になるならsentinelのprev, nextをNULLにする
+(list_clearの挙動)
 */
