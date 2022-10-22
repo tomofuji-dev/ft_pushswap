@@ -6,15 +6,15 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:58:44 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/21 14:18:29 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/23 07:14:45 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define FALSE	0
-# define TRUE	1
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef enum e_bool
 {
@@ -32,8 +32,15 @@ typedef struct s_list
 
 t_list	*list_new(int content, t_bool sentinel);
 t_list	*list_last(t_list *head);
-t_list	*list_addback(t_list *head, t_list *new);
-t_list	*list_addfront(t_list *head, t_list *new);
+void	list_addback(t_list *head, t_list *new);
+void	list_addfront(t_list *head, t_list *new);
 void	list_clear(t_list *head);
+
+void	swap_a(t_list *stack_a, size_t *len_a);
+void	swap_b(t_list *stack_b, size_t *len_b);
+void	swap_ab(t_list *stack_a, t_list *stack_b, size_t *len_a, size_t *len_b);
+
+int		ft_atoi(const char *nptr);
+void	free_all(t_list *stack_a, t_list *stack_b);
 
 #endif	/* PUSH_SWAP_H */

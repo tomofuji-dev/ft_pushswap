@@ -6,12 +6,11 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:04:16 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/21 14:18:04 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/23 07:14:25 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
 t_list	*list_new(int content, t_bool sentinel)
 {
@@ -37,7 +36,7 @@ t_list	*list_last(t_list *head)
 	return (p);
 }
 
-t_list	*list_addback(t_list *head, t_list *new)
+void	list_addback(t_list *head, t_list *new)
 {
 	t_list	*tail;
 
@@ -48,7 +47,7 @@ t_list	*list_addback(t_list *head, t_list *new)
 	head->prev = new;
 }
 
-t_list	*list_addfront(t_list *head, t_list *new)
+void	list_addfront(t_list *head, t_list *new)
 {
 	t_list	*p;
 
@@ -67,6 +66,8 @@ void	list_clear(t_list *head)
 	t_list	*tmp;
 	t_list	*next;
 
+	if (!head)
+		return ;
 	if (head->next == NULL)
 	{
 		free(head);
