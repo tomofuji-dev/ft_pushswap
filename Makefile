@@ -1,4 +1,5 @@
-SRCS 			= swap.c utils.c list_utils.c
+SRCS 			= swap.c push.c list_add_remove.c list_utils.c utils.c
+HEADER			= push_swap.h
 OBJS			= $(SRCS:.c=.o)
 
 CC				= gcc
@@ -20,7 +21,14 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
+norm:
+				norminette -R CheckForbiddenSourceHeader $(SRCS)
+				norminette -R CheckDefine $(HEADER)
+
 test_swap:
 				$(CC) $(CFLAGS) -g $(SRCS) test_swap.c
 
-.PHONY:			all clean fclean re test_swap
+test_push:
+				$(CC) $(CFLAGS) -g $(SRCS) test_push.c
+
+.PHONY:			all clean fclean re norm test_swap test_push

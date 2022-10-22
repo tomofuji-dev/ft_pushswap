@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:04:16 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 07:14:25 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/23 08:12:16 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,6 @@ t_list	*list_last(t_list *head)
 	while (p->next && p->next->sentinel == FALSE)
 		p = p->next;
 	return (p);
-}
-
-void	list_addback(t_list *head, t_list *new)
-{
-	t_list	*tail;
-
-	tail = list_last(head);
-	tail->next = new;
-	new->prev = tail;
-	new->next = head;
-	head->prev = new;
-}
-
-void	list_addfront(t_list *head, t_list *new)
-{
-	t_list	*p;
-
-	if (head->next)
-		p = head->next;
-	else
-		p = head;
-	head->next = new;
-	new->prev = head;
-	new->next = p;
-	p->prev = new;
 }
 
 void	list_clear(t_list *head)
