@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:58:44 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 08:31:43 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/23 09:04:21 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ void	swap_ab(t_list *stack_a, t_list *stack_b, size_t *len_a, size_t *len_b);
 
 void	push_a(t_list *stack_a, t_list *stack_b, size_t *len_a, size_t *len_b);
 void	push_b(t_list *stack_a, t_list *stack_b, size_t *len_a, size_t *len_b);
+
+void	rotate_a(t_list *stack_a, size_t *len_a);
+void	rotate_b(t_list *stack_b, size_t *len_b);
+void	rotate_ab(t_list *stack_a, t_list *stack_b, \
+					size_t *len_a, size_t *len_b);
 
 t_list	*list_new(int content, t_bool sentinel);
 t_list	*list_last(t_list *head);

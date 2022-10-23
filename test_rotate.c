@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_swap.c                                        :+:      :+:    :+:   */
+/*   test_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 06:27:12 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 09:08:04 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/10/23 08:28:33 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/10/23 09:10:26 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	main(int argc, char *argv[])
 		list_addback(stack_a, new_node);
 		len_a++;
 	}
+	int i = 0;
 	while (i++ < 3)
 		push_b(stack_a, stack_b, &len_a, &len_b);
 	printf("===== init =====\n");
@@ -72,30 +73,33 @@ int	main(int argc, char *argv[])
 	print_stack(stack_a);
 	printf("stack b: \n");
 	print_stack(stack_b);
-	printf("===== swap =====\n");
-	swap_a(stack_a, &len_a);
-	swap_b(stack_b, &len_b);
-	printf("stack a: \n");
-	print_stack(stack_a);
-	printf("stack b: \n");
-	print_stack(stack_b);
-	printf("===== swap =====\n");
-	swap_a(stack_a, &len_a);
-	swap_b(stack_b, &len_b);
-	printf("stack a: \n");
-	print_stack(stack_a);
-	printf("stack b: \n");
-	print_stack(stack_b);
-	printf("===== swap =====\n");
-	swap_ab(stack_a, stack_b, &len_a, &len_b);
-	printf("stack a: \n");
-	print_stack(stack_a);
-	printf("stack b: \n");
-	print_stack(stack_b);
-	printf("===== swap =====\n");
-	swap_ab(stack_a, stack_b, &len_a, &len_b);
-	printf("stack a: \n");
-	print_stack(stack_a);
-	printf("stack b: \n");
-	print_stack(stack_b);
+	i = 0;
+	while (i++ < 5)
+	{
+		printf("===== rotate_a =====\n");
+		rotate_a(stack_a, &len_a);
+		printf("stack a: \n");
+		print_stack(stack_a);
+		printf("stack b: \n");
+		print_stack(stack_b);
+	}
+	while (i-- > 0)
+	{
+		printf("===== rotate_b =====\n");
+		rotate_b(stack_b, &len_b);
+		printf("stack a: \n");
+		print_stack(stack_a);
+		printf("stack b: \n");
+		print_stack(stack_b);
+	}
+	while (i++ < 5)
+	{
+		printf("===== rotate_ab =====\n");
+		rotate_ab(stack_a, stack_b, &len_a, &len_b);
+		printf("stack a: \n");
+		print_stack(stack_a);
+		printf("stack b: \n");
+		print_stack(stack_b);
+	}
+	return (1);
 }
