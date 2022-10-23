@@ -1,4 +1,4 @@
-SRCS 			= swap.c push.c rotate.c list_add_remove.c list_utils.c utils.c
+SRCS 			= swap.c push.c rotate.c rrotate.c list_add_remove.c list_utils.c utils.c
 HEADER			= push_swap.h
 OBJS			= $(SRCS:.c=.o)
 
@@ -34,4 +34,7 @@ test_push:
 test_rotate:
 				$(CC) $(CFLAGS) -g $(SRCS) test_rotate.c
 
-.PHONY:			all clean fclean re norm test_swap test_push
+test_rrotate:
+				$(CC) $(CFLAGS) -g $(SRCS) test_rrotate.c
+
+.PHONY:			all clean fclean re norm test_swap test_push test_rotate test_rrotate
