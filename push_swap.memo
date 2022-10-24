@@ -6,7 +6,7 @@
 #    By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:20:34 by tfujiwar          #+#    #+#              #
-#    Updated: 2022/10/24 10:09:37 by tfujiwar         ###   ########.fr        #
+#    Updated: 2022/10/24 13:55:52 by tfujiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,4 +42,6 @@ int	psuedo_main(int argc, char *argv[])
 warning: len_a, len_bを減らす際、もし0になるならsentinelのprev, nextをNULLにする
 (ft_atoi)
 test codeも含めて、ft_atoiを削除する
+(sentinel)
+座標圧縮するので、sentinelフラグは(if content == -1)で判断可能
 */

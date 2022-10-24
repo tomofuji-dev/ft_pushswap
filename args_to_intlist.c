@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 08:33:03 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/24 11:26:58 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:04:05 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,9 @@ int	*args_to_intlist(int argc, char *argv[])
 	int	*int_list;
 	int	i;
 
-	if (argc < 2)
-		free_all(NULL, NULL, NULL);
 	int_list = malloc(sizeof(int) * (argc - 1));
 	if (!int_list)
-		free_all(NULL, NULL, NULL);
+		free_all(NULL, NULL, int_list);
 	i = 1;
 	while (i < argc)
 	{

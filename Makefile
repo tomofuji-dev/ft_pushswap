@@ -1,4 +1,4 @@
-SRCS 			= arg.c swap.c push.c rotate.c rrotate.c list_add_remove.c list_utils.c utils.c
+SRCS 			= intlist_to_tlist.c args_to_intlist.c swap.c push.c rotate.c rrotate.c list_add_remove.c list_utils.c utils.c
 HEADER			= push_swap.h
 OBJS			= $(SRCS:.c=.o)
 
