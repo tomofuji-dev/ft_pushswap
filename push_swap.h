@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:58:44 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 09:19:12 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:03:54 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
+
+int		*args_to_intlist(int argc, char *argv[]);
 
 void	swap_a(t_list *stack_a, size_t *len_a);
 void	swap_b(t_list *stack_b, size_t *len_b);
@@ -57,6 +59,7 @@ t_list	*list_removefront(t_list *head);
 t_list	*list_removeback(t_list *head);
 
 int		ft_atoi(const char *nptr);
-void	free_all(t_list *stack_a, t_list *stack_b);
+void	free_all(t_list *stack_a, t_list *stack_b, int *int_list);
+int		*bubble_sort(int *int_list, int len);
 
 #endif	/* PUSH_SWAP_H */

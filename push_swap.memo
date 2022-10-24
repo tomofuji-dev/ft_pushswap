@@ -6,7 +6,7 @@
 #    By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:20:34 by tfujiwar          #+#    #+#              #
-#    Updated: 2022/10/23 07:39:26 by tfujiwar         ###   ########.fr        #
+#    Updated: 2022/10/24 10:09:37 by tfujiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ int return_err(void **p)
 
 int	psuedo_main(int argc, char *argv[])
 {
-	if argc_check(): return			// check if argc >= 2: else print None;
+	if argc_check(): return				// check if argc >= 2: else print None;
 	intlist = argv_to_intlist()			// convert argv to list, if incorrect input or malloc error, return NULL;
 	if (!intlist): return_err			// check if every args is correctly converted to int: else print("Error");
 	if dup_check(intlist): return_err 	// check if dup value in list: print("Error");
@@ -38,6 +38,8 @@ int	psuedo_main(int argc, char *argv[])
 }
 
 === memo ===
-warning: len_a, len_bを減らす際、もし0になるならsentinelのprev, nextをNULLにする
 (list_clearの挙動)
+warning: len_a, len_bを減らす際、もし0になるならsentinelのprev, nextをNULLにする
+(ft_atoi)
+test codeも含めて、ft_atoiを削除する
 */

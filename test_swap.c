@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 06:27:12 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 09:08:04 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/24 09:55:33 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,16 @@ int	main(int argc, char *argv[])
 	stack_a = list_new(0, TRUE);
 	stack_b = list_new(0, TRUE);
 	if (!stack_a || !stack_b)
-		free_all(stack_a, stack_b);
+		free_all(stack_a, stack_b, NULL);
 	while (len_a < (size_t)argc - 1)
 	{
 		new_node = list_new(ft_atoi(argv[len_a + 1]), FALSE);
 		if (!new_node)
-			free_all(stack_a, stack_b);
+			free_all(stack_a, stack_b, NULL);
 		list_addback(stack_a, new_node);
 		len_a++;
 	}
+	int i = 0;
 	while (i++ < 3)
 		push_b(stack_a, stack_b, &len_a, &len_b);
 	printf("===== init =====\n");

@@ -1,4 +1,4 @@
-SRCS 			= swap.c push.c rotate.c rrotate.c list_add_remove.c list_utils.c utils.c
+SRCS 			= arg.c swap.c push.c rotate.c rrotate.c list_add_remove.c list_utils.c utils.c
 HEADER			= push_swap.h
 OBJS			= $(SRCS:.c=.o)
 
@@ -25,6 +25,14 @@ norm:
 				norminette -R CheckForbiddenSourceHeader $(SRCS)
 				norminette -R CheckDefine $(HEADER)
 
+test_arg:
+				$(CC) $(CFLAGS) -g $(SRCS) test_arg.c
+				./a.out
+				./a.out 1 2 3 0 5 8 7 6 4 9
+				./a.out 3 1 2 2147483647 -2147483647 -2147483648
+				./a.out 2147483648
+				./a.out -2147483649
+
 test_swap:
 				$(CC) $(CFLAGS) -g $(SRCS) test_swap.c
 
@@ -37,4 +45,4 @@ test_rotate:
 test_rrotate:
 				$(CC) $(CFLAGS) -g $(SRCS) test_rrotate.c
 
-.PHONY:			all clean fclean re norm test_swap test_push test_rotate test_rrotate
+.PHONY:			all clean fclean re norm test_arg test_swap test_push test_rotate test_rrotate
