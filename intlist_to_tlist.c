@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:20:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/24 14:47:51 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:09:43 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ t_list_meta	*intlist_to_tlist(int *int_list, int len)
 	meta->len_b = 0;
 	meta->stack_a = list_new(-1, TRUE);
 	meta->stack_b = list_new(-1, TRUE);
-	if (!meta->stack_a || !meta->stack_b)
+	meta->answer = list_new(-1, TRUE);
+	if (!meta->stack_a || !meta->stack_b || !meta->answer)
 		free_all(meta->stack_a, meta->stack_b, int_list);
 	i = 0;
 	while (i < len)

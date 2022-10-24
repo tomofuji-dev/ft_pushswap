@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:58:44 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/24 14:49:47 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:07:28 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_list_meta
 	size_t	len_a;
 	size_t	len_b;
 	size_t	len;
+	t_list	*answer;
 }	t_list_meta;
 
 int			*args_to_intlist(int argc, char *argv[]);
