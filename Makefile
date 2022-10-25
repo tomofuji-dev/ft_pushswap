@@ -1,4 +1,4 @@
-SRCS 			= intlist_to_tlist.c args_to_intlist.c swap.c push.c rotate.c rrotate.c list_add_remove.c list_utils.c utils.c
+SRCS 			= intlist_to_tlist.c args_to_intlist.c swap.c push.c rotate.c rrotate.c list_add_remove.c sort_utils.c list_utils.c utils.c
 HEADER			= push_swap.h
 OBJS			= $(SRCS:.c=.o)
 
@@ -33,6 +33,10 @@ test_arg:
 				./a.out 5 1 3 0 2147483647 -2147483647 -2147483648
 				./a.out 2147483648
 				./a.out -2147483649
+
+test_sort:
+				$(CC) $(CFLAGS) -g $(SRCS) test_sort.c
+				./a.out 5 1 3 4 2
 
 test_swap:
 				$(CC) $(CFLAGS) -g $(SRCS) test_swap.c

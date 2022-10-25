@@ -6,21 +6,19 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:01:05 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/24 15:17:43 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:57:08 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-void	free_all(t_list_meta *meta, int *int_list)
+void	free_all(t_list *stack_a, t_list *stack_b, int *int_list)
 {
 	if (stack_a)
 		list_clear(stack_a);
 	if (stack_b)
 		list_clear(stack_b);
-	if (answer)
-		list_clear(answer);
 	if (int_list)
 		free(int_list);
 	write(2, "Error\n", 6);

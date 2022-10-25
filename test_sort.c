@@ -1,16 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   test_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:02:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/25 18:53:16 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:57:15 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+static void	print_stack(t_list *stack)
+{
+	t_list	*tmp;
+
+	if (!stack)
+	{
+		printf("%s", "stack is NULL\n");
+		return ;
+	}
+	else if (!stack->next)
+	{
+		printf("%s", "stack is empty\n");
+		return ;
+	}
+	printf("[");
+	tmp = stack->next;
+	while (tmp->next->sentinel == FALSE)
+	{
+		printf("%d ", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("%d]\n", tmp->content);
+	return ;
+}
 
 void	sort_3elems(t_list_meta *meta)
 {
@@ -97,6 +123,8 @@ int	main(int argc, char *argv[])
 		sort_under_6elems(meta);
 	// else
 	// 	sort_over_7elems(meta);
+	print_stack(meta->stack_a);
+	print_stack(meta->stack_b);
 	free(meta);
 	return (1);
 }

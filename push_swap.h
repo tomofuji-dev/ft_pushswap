@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:58:44 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/24 15:07:28 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:32:33 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ typedef enum e_bool
 	FALSE,
 	TRUE
 }	t_bool;
+
+typedef enum e_cmd
+{
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR
+}	t_cmd;
 
 typedef struct s_list
 {
@@ -37,12 +52,14 @@ typedef struct s_list_meta
 	size_t	len_a;
 	size_t	len_b;
 	size_t	len;
-	t_list	*answer;
 }	t_list_meta;
 
 int			*args_to_intlist(int argc, char *argv[]);
 t_list_meta	*intlist_to_tlist(int *int_list, int len);
 
+void		exec_cmd(t_list_meta *meta, t_cmd cmd);
+t_bool		is_sorted(t_list *head, size_t len);
+size_t		get_index(t_list *head, size_t len, int key);
 
 void		swap_a(t_list *stack_a, size_t *len_a);
 void		swap_b(t_list *stack_b, size_t *len_b);
