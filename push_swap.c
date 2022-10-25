@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:02:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 06:49:38 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 07:28:54 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	sort_over_7elems(t_list_meta *meta)
 		j = 0;
 		while (j++ < len_a)
 		{
-			if (meta->stack_a->next->content >> i & 1 == 1)
+			if (((meta->stack_a->next->content >> i) & 1) == 1)
 				exec_cmd(meta, RA);
 			else
 				exec_cmd(meta, PB);

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 08:33:03 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 06:53:22 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 07:25:57 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ static void	coord_compress(int *int_list, int len)
 			}
 		}
 	}
+	free(int_list_sorted);
 }
 
 int	*args_to_intlist(int argc, char *argv[])
