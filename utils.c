@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:01:05 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/25 17:57:08 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 05:56:13 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ void	free_all(t_list *stack_a, t_list *stack_b, int *int_list)
 		free(int_list);
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void	free_meta(t_list_meta *meta)
+{
+	list_clear(meta->stack_a);
+	list_clear(meta->stack_b);
+	free(meta->original_list);
+	free(meta);
 }
 
 void	swap_value(int *a, int *b)
@@ -57,4 +65,17 @@ int	*bubble_sort(int *int_list, int len)
 		}
 	}
 	return (int_list_sorted);
+}
+
+unsigned int	count_bit_len(unsigned int n)
+{
+	int	count;
+
+	count = 1;
+	while (n / 2 > 0)
+	{
+		count += 1;
+		n /= 2;
+	}
+	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:02:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 05:24:41 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 06:14:15 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,32 @@ void	sort_under_6elems(t_list_meta *meta)
 		exec_cmd(meta, PA);
 }
 
-// void	sort_over_7elems(t_list_meta *meta)
-// {
-// 	return ;
-// }
+void	sort_over_7elems(t_list_meta *meta)
+{
+	unsigned int	bit_len;
+	unsigned int	i;
+	size_t			len_a;
+	size_t			j;
+
+	bit_len = count_bit_len((unsigned int)meta->len);
+	i = 0;
+	while (i < bit_len)
+	{
+		len_a = meta->len_a;
+		j = 0;
+		while (j++ < len_a)
+		{
+			if (meta->stack_a->next->content >> i & 1 == 1)
+				exec_cmd(meta, RA);
+			else
+				exec_cmd(meta, PB);
+		}
+		while (meta->len_b > 0)
+			exec_cmd(meta, PA);
+		i++;
+	}
+	return ;
+}
 
 int	main(int argc, char *argv[])
 {
@@ -94,11 +116,8 @@ int	main(int argc, char *argv[])
 		sort_under_3elems(meta);
 	else if (argc - 1 <= 6)
 		sort_under_6elems(meta);
-	// else
-	// 	sort_over_7elems(meta);
-	free(meta->stack_a);
-	free(meta->stack_b);
-	free(meta->original_list);
-	free(meta);
+	else
+		sort_over_7elems(meta);
+	free_meta(meta);
 	return (0);
 }

@@ -35,8 +35,22 @@ test_arg:
 				./a.out -2147483649
 
 test_sort:
-				$(CC) $(CFLAGS) -g $(SRCS) test_sort.c
+				$(CC) $(CFLAGS) -g -fsanitize=address $(SRCS) test_sort.c
+				./a.out
+				./a.out 1 2 three
+				./a.out 1
+				./a.out 1 2
+				./a.out 2 1
+				./a.out 1 2 3
+				./a.out 2 1 3
+				./a.out 3 2 1
+				./a.out 3 1 2
+				./a.out 1 3 2
+				./a.out 2 3 1
+				./a.out 1 2 3 4 5
 				./a.out 5 1 3 4 2
+				./a.out 5 1 3 4 2 0
+				./a.out 5 1 3 4 2 7 8 6 9 10 0
 
 test_swap:
 				$(CC) $(CFLAGS) -g $(SRCS) test_swap.c

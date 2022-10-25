@@ -6,11 +6,11 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 08:56:37 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/23 09:05:46 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 06:11:33 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 static void	rotate(t_list *stack, size_t *stack_len)
 {
