@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:20:08 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/25 18:45:40 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 05:17:09 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ t_list_meta	*intlist_to_tlist(int *int_list, int len)
 	}
 	meta->len_a = (size_t)len;
 	meta->len = (size_t)len;
+	meta->original_list = int_list;
 	return (meta);
 }

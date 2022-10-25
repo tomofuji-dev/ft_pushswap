@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:02:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/25 19:06:25 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 05:24:41 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int	main(int argc, char *argv[])
 		return (-1);
 	int_list = args_to_intlist(argc, argv);
 	meta = intlist_to_tlist(int_list, argc - 1);
-	free(int_list);
 	if (is_sorted(meta->stack_a, meta->len_a))
 		return (-1);
 	if (argc - 1 <= 3)
@@ -99,6 +98,7 @@ int	main(int argc, char *argv[])
 	// 	sort_over_7elems(meta);
 	free(meta->stack_a);
 	free(meta->stack_b);
+	free(meta->original_list);
 	free(meta);
-	return (1);
+	return (0);
 }
