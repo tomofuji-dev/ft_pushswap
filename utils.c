@@ -6,31 +6,37 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:01:05 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 05:56:13 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 06:56:09 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-void	free_all(t_list *stack_a, t_list *stack_b, int *int_list)
+void	free_list(int *int_list, int *int_list_sorted)
 {
-	if (stack_a)
-		list_clear(stack_a);
-	if (stack_b)
-		list_clear(stack_b);
 	if (int_list)
+		free(int_list);
+	if (int_list_sorted)
 		free(int_list);
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
-void	free_meta(t_list_meta *meta)
+void	free_meta(t_list_meta *meta, t_bool exit_bool)
 {
-	list_clear(meta->stack_a);
-	list_clear(meta->stack_b);
-	free(meta->original_list);
+	if (meta->stack_a)
+		list_clear(meta->stack_a);
+	if (meta->stack_b)
+		list_clear(meta->stack_b);
+	if (meta->original_list)
+		free(meta->original_list);
 	free(meta);
+	if (exit_bool)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 }
 
 void	swap_value(int *a, int *b)

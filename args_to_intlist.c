@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg.c                                              :+:      :+:    :+:   */
+/*   args_to_intlist.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 08:33:03 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/24 14:04:05 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 06:53:22 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ static void	handle_digit(int *int_list, int i, char *tmp, int sign)
 			if (n <= (INT_MAX - tmp_digit) / 10)
 				n = 10 * n + tmp_digit;
 			else
-				free_all(NULL, NULL, int_list);
+				free_list(int_list, NULL);
 		}
 		else
 		{
 			if (n >= (INT_MIN + tmp_digit) / 10)
 				n = 10 * n - tmp_digit;
 			else
-				free_all(NULL, NULL, int_list);
+				free_list(int_list, NULL);
 		}
 	}
 	if (*tmp != '\0')
-		free_all(NULL, NULL, int_list);
+		free_list(int_list, NULL);
 	int_list[i - 1] = n;
 }
 
@@ -55,7 +55,7 @@ static void	atoi_argv(int *int_list, char *argv[], int i)
 		tmp++;
 	}
 	if (!((*tmp >= '0') && (*tmp <= '9')))
-		free_all(NULL, NULL, int_list);
+		free_list(int_list, NULL);
 	handle_digit(int_list, i, tmp, sign);
 }
 
@@ -81,12 +81,9 @@ static void	coord_compress(int *int_list, int len)
 
 	int_list_sorted = bubble_sort(int_list, len);
 	if (!int_list_sorted)
-		free_all(NULL, NULL, int_list);
+		free_list(int_list, NULL);
 	if (check_multi(int_list_sorted, len))
-	{
-		free(int_list_sorted);
-		free_all(NULL, NULL, int_list);
-	}
+		free_list(int_list, int_list_sorted);
 	i = 0;
 	while (i++ < len)
 	{
@@ -109,7 +106,7 @@ int	*args_to_intlist(int argc, char *argv[])
 
 	int_list = malloc(sizeof(int) * (argc - 1));
 	if (!int_list)
-		free_all(NULL, NULL, int_list);
+		free_list(int_list, NULL);
 	i = 1;
 	while (i < argc)
 	{

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:58:44 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 05:56:46 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 06:56:20 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ void			list_addfront(t_list *head, t_list *new);
 t_list			*list_removefront(t_list *head);
 t_list			*list_removeback(t_list *head);
 
-void			free_all(t_list *stack_a, t_list *stack_b, int *int_list);
-void			free_meta(t_list_meta *meta);
+void			free_list(int *int_list, int *int_list_sorted);
+void			free_meta(t_list_meta *meta, t_bool exit_bool);
 int				*bubble_sort(int *int_list, int len);
 unsigned int	count_bit_len(unsigned int n);
 

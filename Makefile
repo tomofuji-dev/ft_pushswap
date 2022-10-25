@@ -4,7 +4,7 @@ OBJS			= $(SRCS:.c=.o)
 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= stack.a
 
@@ -35,7 +35,7 @@ test_arg:
 				./a.out -2147483649
 
 test_sort:
-				$(CC) $(CFLAGS) -g -fsanitize=address $(SRCS) test_sort.c
+				$(CC) $(CFLAGS) -g $(SRCS) test_sort.c
 				./a.out
 				./a.out 1 2 three
 				./a.out 1
