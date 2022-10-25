@@ -52,4 +52,6 @@ Mkfile.old
 dkms.conf
 
 .vscode
-./pushswap
+push_swap
+checker
+push_swap_tester/

@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 09:17:40 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 06:11:53 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/26 08:11:09 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ static void	rrotate(t_list *stack, size_t *stack_len)
 
 void	rrotate_a(t_list *stack_a, size_t *len_a)
 {
-	write(1, "ra\n", 3);
+	write(1, "rra\n", 4);
 	rrotate(stack_a, len_a);
 }
 
 void	rrotate_b(t_list *stack_b, size_t *len_b)
 {
-	write(1, "rb\n", 3);
+	write(1, "rrb\n", 4);
 	rrotate(stack_b, len_b);
 }
 
 void	rrotate_ab(t_list *stack_a, t_list *stack_b, \
 					size_t *len_a, size_t *len_b)
 {
-	write(1, "rr\n", 3);
+	write(1, "rrr\n", 4);
 	rrotate(stack_a, len_a);
 	rrotate(stack_b, len_b);
 }
