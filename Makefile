@@ -8,7 +8,7 @@ CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -g
 
-NAME			= pushswap
+NAME			= push_swap
 
 all:			$(NAME)
 

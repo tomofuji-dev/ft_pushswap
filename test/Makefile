@@ -8,7 +8,7 @@ CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -g
 
-NAME			= pushswap
+NAME			= push_swap
 
 all:			$(NAME)
 
@@ -28,20 +28,20 @@ norm:
 				norminette -R CheckDefine $(HEADER)
 
 test:
-				./pushswap
-				./pushswap 1 2 three
-				./pushswap 1
-				./pushswap 1 2
-				./pushswap 2 1
-				./pushswap 1 2 3
-				./pushswap 2 1 3
-				./pushswap 3 2 1
-				./pushswap 3 1 2
-				./pushswap 1 3 2
-				./pushswap 2 3 1
-				./pushswap 1 2 3 4 5
-				./pushswap 5 1 3 4 2
-				./pushswap 5 1 3 4 2 0
-				./pushswap 5 1 3 4 2 7 8 6 9 10 0
+				./push_swap
+				./push_swap 1 2 three
+				./push_swap 1
+				./push_swap 1 2
+				./push_swap 2 1
+				./push_swap 1 2 3
+				./push_swap 2 1 3
+				./push_swap 3 2 1
+				./push_swap 3 1 2
+				./push_swap 1 3 2
+				./push_swap 2 3 1
+				./push_swap 1 2 3 4 5
+				./push_swap 5 1 3 4 2
+				./push_swap 5 1 3 4 2 0
+				./push_swap 5 1 3 4 2 7 8 6 9 10 0
 
 .PHONY:			all clean fclean re norm test
