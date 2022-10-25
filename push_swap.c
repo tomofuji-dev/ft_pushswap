@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:02:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/25 18:53:16 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:06:25 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ int	main(int argc, char *argv[])
 		sort_under_6elems(meta);
 	// else
 	// 	sort_over_7elems(meta);
+	free(meta->stack_a);
+	free(meta->stack_b);
 	free(meta);
 	return (1);
 }
