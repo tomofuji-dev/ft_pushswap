@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:02:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/28 12:25:54 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:33:01 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int	main(int argc, char *argv[])
 	if (is_sorted(meta->stack_a, meta->len_a))
 	{
 		free_meta(meta, FALSE);
-		return (-1);
+		return (0);
 	}
 	if (argc - 1 <= 3)
 		sort_under_3elems(meta);
