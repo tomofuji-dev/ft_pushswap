@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:01:05 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/26 06:56:09 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/28 09:55:15 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	free_list(int *int_list, int *int_list_sorted)
 	if (int_list)
 		free(int_list);
 	if (int_list_sorted)
-		free(int_list);
+		free(int_list_sorted);
 	write(2, "Error\n", 6);
 	exit(1);
 }
