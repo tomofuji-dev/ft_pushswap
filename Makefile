@@ -13,7 +13,6 @@ NAME			= push_swap
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CC) -o $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS)
